@@ -1,0 +1,84 @@
+<section class="catalog">
+  <div class="container catalog__container">
+    <h2 class="catalog__title">Каталог</h2>
+
+    <div class="catalog__menu menu">
+      <ul class="menu__list list-reset">
+        <li class="menu__item active">
+          <a href="" class="menu__link">Шини</a>
+        </li>
+        <li class="menu__item"><a href="" class="menu__link">Диски</a></li>
+        <li class="menu__item"><a class="menu__link">Аксессуары</a></li>
+        <li class="menu__item"><a href="" class="menu__link">Каталог ТО</a></li>
+        <li class="menu__item">
+          <a href="" class="menu__link">Масла и автохимия</a>
+        </li>
+        <li class="menu__item">
+          <a href="" class="menu__link">Аккумуляторы</a>
+        </li>
+        <li class="menu__item"><a href="" class="menu__link">Колпаки</a></li>
+        <li class="menu__item">
+          <a href="" class="menu__link">Болты, гайки</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="catalog__inner row">
+      <div class="catalog__filter col-md-4 col-xl-3">
+        <h5 class="filter__title">Тип</h5>
+        <select name="type" class="filter__select select--type">
+          <option value="Летние">Летние</option>
+          <option value="Зимние">Зимние</option>
+        </select>
+
+        <h5 class="filter__title">Производитель</h5>
+        <select name="manufacturer" class="filter__select select--manufacturer">
+          <option value="">Выбраны все</option>
+          <option value="Continental">Continental</option>
+          <option value="Michelin">Michelin</option>
+          <option value="Goodyear">Goodyear</option>
+          <option value="Cooper">Cooper</option>
+          <option value="Pirelli">Pirelli</option>
+          <option value="Bridgestone">Bridgestone</option>
+          <option value="Yokohama">Yokohama</option>
+        </select>
+
+        <h5 class="filter__title">Размер</h5>
+        <select name="size" class="filter__select select--size">
+          <option value="">Выбраны все</option>
+          <option value="30">30</option>
+          <option value="35">35</option>
+          <option value="40">40</option>
+          <option value="45">45</option>
+          <option value="50">50</option>
+          <option value="55">55</option>
+          <option value="60">60</option>
+          <option value="65">65</option>
+          <option value="70">70</option>
+        </select>
+
+        <h5 class="filter__title">Диаметр</h5>
+        <select name="diameter" class="filter__select select--diameter">
+          <option value="">Выбраны все</option>
+          <option value="R13">R13</option>
+          <option value="R14">R14</option>
+          <option value="R15">R15</option>
+          <option value="R16">R16</option>
+          <option value="R17">R17</option>
+          <option value="R18">R18</option>
+          <option value="R19">R19</option>
+          <option value="R20">R20</option>
+          <option value="R21">R21</option>
+          <option value="R22">R22</option>
+          <option value="R23">R23</option>
+        </select>
+
+        <button class="filter__btn btn-reset">Подобрать</button>
+      </div>
+
+      <div class="catalog__cards col-xs-12 col-sm-8 col-xl-9 row" id="card"></div>
+      <div class="catalog__pages" id="pagination"></div>
+    </div>
+  </div>
+</section>
+

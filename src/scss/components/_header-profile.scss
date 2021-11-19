@@ -1,0 +1,117 @@
+.header-profile {
+	@include flex-v-center;
+
+	.cart {
+		padding-left: 46px;
+		background-image: url('../img/cart.svg');
+		background-position: left center;
+		background-size: 26px 25px;
+		background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+
+		&__sum {
+			font-size: 18px;
+			line-height: 21px;
+			color: var(--color-gray);
+		}
+	}
+
+	.user {
+		margin-left: 40px;
+		padding-left: 80px;
+		border: 1px solid var(--color-blue);
+		border-radius: 6px;
+		width: 180px;
+		height: 40px;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		background-image: url('../img/user.svg');
+		background-size: 100% 100%;
+		background-position: 27px center;
+		background-size: 26px 26px;
+		background-repeat: no-repeat;
+		transition: border 0.3s ease;
+
+		@keyframes swing {
+			15% {
+				background-position: 21px center;
+			}
+			30% {
+				background-position: 32px center;
+			}
+			40% {
+				background-position: 24px center;
+			}
+			50% {
+				background-position: 29px center;
+			}
+			65% {
+				background-position: 25px center;
+			}
+			100% {
+				background-position: 27px center;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			border: 1px solid darken(#4ba9ff, 15%);
+      animation: swing 0.6s ease;
+      animation-iteration-count: 1;
+
+      .user__text {
+        background-color: darken(#4ba9ff, 10%);
+      }
+		}
+
+		&__text {
+			width: 100px;
+			text-align: center;
+			font-size: 18px;
+			line-height: 40px;
+			color: var(--color-white);
+			border-radius: 0 6px 6px 0;
+			background-color: var(--color-blue);
+			transition: background-color 0.3s ease;
+		}
+	}
+}
+
+@media (max-width: 1199px) {
+	.header-profile {
+		@include flex-all-center;
+		padding-top: 80px;
+		position: absolute;
+		transform: translateY(-800px);
+		top: -16px;
+		right: 0;
+		left: 0;
+		background-color: var(--color-white);
+		z-index: 10;
+		transition: transform 0.3s ease;
+	}
+
+	.visible {
+		transform: translateY(0);
+		background-color: var(--color-white);
+	}
+}
+
+@media (max-width: 596px) {
+	.header-profile {
+		flex-direction: column-reverse;
+
+		.user {
+			margin-left: 0;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+
+@media (max-width: 596px) {
+  .nav__list {
+    padding-top: 145px;
+  }
+}

@@ -1,0 +1,198 @@
+.catalog {
+  padding-bottom: 100px;
+  
+
+  &__container {
+    position: relative;
+
+    &::after {
+      content: url(../img/filter__disk.png);
+      position: absolute;
+      bottom: -400px;
+      left: -200px;
+      z-index: 1;
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin: 0 0 60px 0;
+    font-weight: 600;
+    font-size: 64px;
+    color: var(--color-gray);
+
+    &::before {
+      content: "Каталог";
+      position: absolute;
+      top: -110px;
+      font-size: 200px;
+      line-height: 242px;
+      color: rgba(67, 66, 66, 0.1);
+    }
+  }
+  &__menu {
+    margin-bottom: 90px;
+  }
+
+  .menu {
+    &__list {
+      @include flex-all-center;
+      flex-wrap: wrap;
+    }
+
+    &__link {
+      padding: 0 30px;
+      font-size: 18px;
+      color: var(--color-gray);
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--color-blue);
+      }
+    }
+
+    .active {
+      padding: 0 30px;
+      height: 100%;
+      background-color: var(--color-blue);
+      border-radius: 6px;
+
+      a {
+        padding: 0;
+        line-height: 40px;
+        color: var(--color-white);
+
+        &:hover, &:focus  {
+          color: var(--color-white);
+        }
+      }
+    }
+  }
+
+  &__cards {
+    padding-left: 20px
+  }
+
+  &__pages {
+    @include flex-all-center;
+    padding-top: 20px;
+    margin-left: 150px;
+
+    button {
+      @include flex-all-center;
+      padding: 0;
+      height: 50px;
+      width: 50px;
+      font-family: "Montserrat";
+      font-weight: 700;
+      font-size: 24px;
+      color: var(--color-gray);
+      transition: color .3s ease, background-color .3s ease;
+
+      &:hover, &:focus {
+        color: var(--color-blue);
+      }
+    }
+
+    .active {
+      color: var(--color-white);
+      background-color: var(--color-blue);
+      border-radius: 6px;
+
+      &:hover, &:focus {
+        color: var(--color-white);
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1199px) {
+  .catalog__container::after {
+    display: none;
+  }
+
+  .catalog .menu__list {
+    line-height: 60px;
+  }
+  .catalog__title{
+    font-size: 36px;
+
+    &::before {
+      top: -116px;
+      font-size: 85px;
+    }
+  }
+
+  .menu {
+    margin-bottom: 40px;
+  }
+
+  .catalog__pages {
+    margin-left: 130px;
+  }
+}
+
+@media (max-width: 894px) {
+  .catalog .menu__list {
+    line-height: 36px;
+  }
+
+  .catalog .menu a {
+    font-size: 16px;
+    line-height: 14px;
+  }
+
+  .catalog__inner {
+    @include flex-all-center;
+  }
+
+  .catalog__pages {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 596px) {
+  
+
+  .catalog {
+    padding-bottom: 60px;
+  }
+  .catalog__title {
+    font-size: 21px;
+    margin-bottom: 28px;
+
+    &::before {
+      top: -119px;
+      font-size: 49px;
+    }
+  }
+
+  .catalog .menu__link {
+    padding: 0 10px;
+    
+  }
+  .catalog .menu .active{
+    padding: 0 10px;
+    line-height: 20px;
+  }
+
+  .catalog .menu .active a {
+    line-height: 20px;
+  }
+
+  .catalog .menu__item a{
+    font-size: 9px;
+    
+  }
+
+  .catalog__cards {
+    padding: 0;
+  }
+
+  .catalog__pages button {
+    width: 27px;
+    height: 27px;
+    font-size: 12px;
+  }
+}

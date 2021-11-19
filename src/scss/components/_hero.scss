@@ -1,0 +1,346 @@
+.hero {
+	padding-bottom: 160px;
+
+	&__container {
+		position: relative;
+
+		&::before {
+			content: url(../img/hero__star.png);
+			position: absolute;
+			top: -160px;
+			left: -200px;
+
+      animation-name: radio;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+
+			@keyframes radio {
+				0% {
+					top: -210px;
+				}
+
+				100% {
+					top: -60px;
+				}
+			}
+		}
+	}
+
+	&__title {
+		margin: 0 0 60px;
+		font-weight: 700;
+		font-size: 80px;
+		line-height: 97px;
+		color: var(--color-gray);
+
+		span {
+			color: var(--color-blue);
+		}
+	}
+
+	&-catalog {
+		@include flex-v-center;
+		height: 100px;
+		margin-bottom: 72px;
+
+		&__btn {
+			height: 100px;
+			width: 100%;
+			background-color: #e74c3c;
+			border: 3px solid #e74c3c;
+			border-radius: 20px;
+			color: var(--color-white);
+			font-weight: 600;
+			font-size: 24px;
+			line-height: 29px;
+			transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+			&:hover,
+			&:focus {
+				color: #e74c3c;
+				outline: 0;
+				background-color: transparent;
+			}
+		}
+
+		&__descr {
+			margin-left: 20px;
+			font-family: 'Montserrat';
+			font-weight: 300;
+			font-size: 24px;
+			color: var(--color-black);
+		}
+	}
+
+	&__btns {
+		height: 120px;
+
+		.blue-btn {
+			height: 100%;
+			width: 100%;
+			font-family: 'Montserrat';
+			font-weight: 600;
+			font-size: 30px;
+			line-height: 37px;
+			color: var(--color-white);
+			background-color: var(--color-blue);
+			border: 3px solid var(--color-blue);
+			border-radius: 20px;
+			transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+			&:hover,
+			&:focus {
+				color: var(--color-blue);
+				outline: 0;
+				background-color: var(--color-white);
+			}
+		}
+	}
+
+	&__slider {
+		position: absolute;
+		max-height: 600px;
+		width: 600px;
+		top: -60px;
+		right: 0;
+
+		.swiper-pagination {
+			left: auto;
+			right: 0;
+			width: 130px;
+			bottom: 60px;
+			font-family: 'Montserrat';
+			font-size: 36px;
+		}
+
+		.swiper-pagination-current {
+			font-size: 64px;
+			font-weight: 700;
+			color: var(--color-blue);
+		}
+
+		.swiper-button-next {
+			height: 50px;
+			width: 50px;
+			color: white;
+			background-color: var(--color-blue);
+			border-radius: 10px;
+			top: auto;
+			bottom: 60px;
+			left: 75px;
+			transition: transform 0.2s ease;
+
+			&:hover, &:focus {
+				transform: scale(1.1);
+			}
+		}
+
+		.swiper-button-next:after {
+			font-weight: 700;
+			font-size: 20px;
+      
+		}
+
+		.swiper-button-prev {
+			height: 50px;
+			width: 50px;
+			color: white;
+			background-color: var(--color-blue);
+			border-radius: 10px;
+			top: auto;
+			bottom: 60px;
+			left: 5px;
+			transition: transform 0.2s ease;
+
+			&:hover, &:focus {
+				transform: scale(1.1);
+			}
+		}
+
+		.swiper-button-prev:after {
+			font-weight: 700;
+			font-size: 20px;
+		}
+
+		.swiper-button-disabled {
+			background-color: transparent;
+			color: var(--color-blue);
+			opacity: 1 !important;
+			border: 2px solid var(--color-blue);
+		}
+
+		.swiper-slide {
+			height: 600px;
+			width: 600px;
+
+			&::selection {
+				background: transparent;
+			}
+		}
+	}
+}
+
+@media (max-width: 1440px) {
+	.hero__title {
+		font-size: 72px;
+	}
+}
+@media (max-width: 1280px) {
+	.hero__title {
+		font-size: 64px;
+	}
+}
+
+@media (max-width: 1199px) {
+	.hero {
+		padding-bottom: 80px;
+	}
+	.hero__title {
+		line-height: 77px;
+		margin-bottom: 560px;
+	}
+	.hero__slider {
+		top: 200px;
+		right: 0;
+		left: 0;
+	}
+
+	.hero-catalog {
+		position: relative;
+		@include flex-all-center;
+		margin-bottom: 40px;
+	}
+
+	.hero-catalog__btn {
+		position: relative;
+		font-size: 18px;
+		height: 80px;
+	}
+
+	.hero-catalog__btn::after {
+		position: absolute;
+
+		top: -46px;
+		left: -68px;
+		content: url(../img/bolt.png);
+	}
+	.hero-catalog__descr {
+		position: absolute;
+		right: -60px;
+		top: 40px;
+		font-size: 18px;
+	}
+
+	.hero__btns .blue-btn {
+		height: 80px;
+		font-size: 18px;
+		line-height: 22px;
+	}
+}
+
+@media (max-width: 894px) {
+	.hero__title {
+		font-size: 46px;
+		line-height: 56px;
+	}
+
+	.hero-catalog__btn {
+		font-size: 16px;
+	}
+
+	.hero-catalog__descr {
+		right: -40px;
+		font-size: 14px;
+	}
+
+	.hero__btns .blue-btn {
+		font-size: 14px;
+	}
+
+	.about .about__container::before {
+		display: none;
+	}
+
+	.about .about__container::after {
+		display: none;
+	}
+}
+
+@media (max-width: 767px) {
+	.hero__btns {
+		@include flex-all-center;
+		height: 360px;
+	}
+
+	.hero__btns .blue-btn {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 596px) {
+	.hero__title {
+		width: 100%;
+		margin-bottom: 360px;
+		font-size: 34px;
+		line-height: 41px;
+	}
+
+	.hero__slider .swiper-slide {
+		bottom: 20px;
+		height: 100%;
+	}
+
+	.hero__slider .swiper-button-next {
+		width: 25px;
+		height: 25px;
+		bottom: 40px;
+		left: 45px;
+
+		&::after {
+			font-size: 10px;
+		}
+	}
+	.hero__slider .swiper-button-prev {
+		width: 25px;
+		height: 25px;
+		bottom: 40px;
+		left: 15px;
+
+		&::after {
+			font-size: 10px;
+		}
+	}
+	.hero__slider .swiper-pagination {
+		right: -10px;
+		bottom: 36px;
+		font-size: 18px;
+	}
+	.hero__slider .swiper-pagination-current {
+		font-size: 38px;
+	}
+
+	.hero-catalog {
+		position: relative;
+		@include flex-all-center;
+		margin-bottom: 80px;
+
+		.hero-catalog__btn-wrapper {
+			width: 90%;
+		}
+	}
+	.hero-catalog__btn {
+		height: 56px;
+		font-size: 14px;
+	}
+
+	.hero-catalog__descr {
+		position: absolute;
+		margin-left: 0;
+		text-align: center;
+		top: 120px;
+		left: 74px;
+		font-size: 18px;
+		width: 200px;
+	}
+}

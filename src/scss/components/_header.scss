@@ -1,0 +1,53 @@
+.header {
+  
+  padding: 16px 0;
+  background-color: var(--color-white);
+  border-radius: 0 0 20px 20px;
+  
+
+  .logo {
+    z-index: 100;
+    
+  }
+  
+  &__container {
+    position: relative;
+    @include flex-all-sb;
+  }
+
+}
+.fixed + .search {
+  padding-top: 140px;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+	z-index: 10;
+	box-shadow: 0px -10px 31px 3px rgba(34, 60, 80, 0.2);
+	transition: all 0.3s linear;
+
+  .logo {
+    margin-right: 94px;
+    width: 160px;
+  }
+}
+
+@media (max-width: 596px) {
+  .logo {
+    width: 120px;
+  }
+
+  .fixed {
+    .logo {
+      width: 100px;
+    }
+  }
+
+  .fixed + .search {
+    padding-top: 80px;
+  }
+}
+
+

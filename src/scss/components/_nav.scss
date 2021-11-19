@@ -1,0 +1,83 @@
+.nav {
+  &__list {
+    @include flex-v-center;
+  }
+
+  &__link {
+    padding: 0 30px;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--color-gray);
+    transition: color .3s ease;
+
+    &:hover {
+      color: var(--color-blue);
+    }
+  }
+  .active {
+    padding: 0 30px;
+    height: 100%;
+    background-color: var(--color-blue);
+    border-radius: 6px;
+
+    a {
+      padding: 0;
+      line-height: 40px;
+      color: var(--color-white);
+    }
+  }
+}
+
+
+@media (max-width: 1400px) {
+  .nav__link {
+    padding: 0 20px;
+  }
+  
+  .active {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .nav {
+    background-color: var(--color-white);
+    
+  }
+  .nav__list {
+    position: absolute;
+    width: 100vw;
+    padding-top: 120px;
+    left: 50%;
+    transform: translate(-50%, -1000px);
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: var(--color-white);
+    box-shadow: 0 10px 10px 0 rgba(#1c1c1c, $alpha: 0.1);
+    border-radius: 0 0 25px 25px;
+    z-index: 10;
+    transition: transform .3s ease;
+
+  
+  }
+  .nav .animate {
+    transform: translate(-50%, 0);
+    
+  }
+
+  .nav__item {
+    margin-bottom: 30px;
+    background-color: var(--color-white);
+
+    &:last-child {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .hero__container::before {
+    display: none;
+  }
+}
